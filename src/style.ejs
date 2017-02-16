@@ -1,0 +1,475 @@
+<style>
+  /* http://meyerweb.com/eric/tools/css/reset/
+                         v2.0 | 20110126
+                         License: none (public domain)
+                      */
+
+  html,
+  body,
+  div,
+  span,
+  applet,
+  object,
+  iframe,
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
+  p,
+  blockquote,
+  pre,
+  a,
+  abbr,
+  acronym,
+  address,
+  big,
+  cite,
+  code,
+  del,
+  dfn,
+  em,
+  img,
+  ins,
+  kbd,
+  q,
+  s,
+  samp,
+  small,
+  strike,
+  strong,
+  sub,
+  sup,
+  tt,
+  var,
+  b,
+  u,
+  i,
+  center,
+  dl,
+  dt,
+  dd,
+  ol,
+  ul,
+  li,
+  fieldset,
+  form,
+  label,
+  legend,
+  table,
+  caption,
+  tbody,
+  tfoot,
+  thead,
+  tr,
+  th,
+  td,
+  article,
+  aside,
+  canvas,
+  details,
+  embed,
+  figure,
+  figcaption,
+  footer,
+  header,
+  hgroup,
+  menu,
+  nav,
+  output,
+  ruby,
+  section,
+  summary,
+  time,
+  mark,
+  audio,
+  video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
+  }
+  /* HTML5 display-role reset for older browsers */
+
+  article,
+  aside,
+  details,
+  figcaption,
+  figure,
+  footer,
+  header,
+  hgroup,
+  menu,
+  nav,
+  section {
+    display: block;
+  }
+  body {
+    line-height: 1;
+  }
+  ol,
+  ul {
+    list-style: none;
+  }
+  blockquote,
+  q {
+    quotes: none;
+  }
+  blockquote:before,
+  blockquote:after,
+  q:before,
+  q:after {
+    content: '';
+    content: none;
+  }
+  table {
+    border-collapse: collapse;
+    border-spacing: 0;
+  }
+  div {
+    color: #000000;
+  }
+  h2 {
+    padding-left: 5%;
+    text-align: left;
+    font-family: "Adobe Garamond W08", "adobe-garamond-pro", "AGaramondPro-Regular", "Times New Roman", "Times", "serif";
+    font-size: 2em;
+    line-height: 1.4em;
+    color: black;
+  }
+  h3 {
+    text-align: left;
+    font-family: "Adobe Garamond W08", "adobe-garamond-pro", "AGaramondPro-Regular", "Times New Roman", "Times", "serif";
+    font-size: 1.5em;
+    line-height: 1.4em;
+    color: black;
+  }
+  h4 {
+    text-align: left;
+    font-family: "ITC Avant Garde Gothic W04", "AvantGardeGothicITCW01D 720%75", "AvantGardeGothicITCW01Dm", "Helvetica", sans-serif;
+    font-size: 0.75em;
+    letter-spacing: 1px;
+    line-height: 1.4em;
+    text-transform: uppercase;
+    color: black;
+  }
+  p {
+    text-align: left;
+    font-family: "Adobe Garamond W08", "adobe-garamond-pro", "AGaramondPro-Regular", "Times New Roman", "Times", "serif";
+    font-size: 1em;
+    line-height: 1.4em;
+    color: black;
+  }
+  * {
+    box-sizing: border-box;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+  ::selection {
+    background-color: #6e1fff;
+    color: white;
+  }
+  .headerBar {
+    position: fixed;
+    display: inline-block;
+    color: white;
+    text-align: left;
+    font-family: "ITC Avant Garde Gothic W04", "AvantGardeGothicITCW01D 720%75", "AvantGardeGothicITCW01Dm", "Helvetica", sans-serif;
+    font-size: 0.75em;
+    letter-spacing: 1px;
+    line-height: 1.4em;
+    text-transform: uppercase;
+    width: 100%;
+    z-index: 1;
+  }
+  .headerBar.headerBarDark .headerBarNav a {
+    color: black;
+  }
+  .headerBar.headerBarDark .primerLogoBlack {
+    display: block;
+  }
+  .headerBar.headerBarDark .primerLogoWhite {
+    display: none;
+  }
+  .headerBarNavWrapper {
+    position: absolute;
+    right: 0;
+    top: 24px;
+    right: 55px;
+  }
+  .headerBarNavWrapper * {
+    font-size: 13px;
+  }
+  .headerBar #primerLogo {
+    display: inline-block;
+    padding: 20px 0 20px 55px;
+  }
+  .primerLogoBlack {
+    display: none;
+  }
+  .headerBar ul.headerBarNav {
+    display: inline-block;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+  }
+  .headerBar ul.headerBarNav li {
+    float: left;
+  }
+  .headerBar ul.headerBarNav li a {
+    display: inline-block;
+    color: white;
+    text-align: center;
+    margin: 14px 16px;
+    text-decoration: none;
+    position: relative;
+  }
+  .headerBar ul.headerBarNav li a:hover {
+    color: white;
+    position: relative;
+  }
+  .headerBar ul.headerBarNav li a::after {
+    content: '.';
+    position: absolute;
+    color: transparent;
+    width: 100%;
+    border-bottom: 2px solid white;
+    bottom: -5px;
+    left: 0;
+    opacity: 0;
+    z-index: 2;
+  }
+  .headerBar ul.headerBarNav li:hover a::after {
+    opacity: 1;
+  }
+  .headerBar ul.headerBarNav li.icon {
+    display: none;
+  }
+  .headerBar .headerBarButton {
+    background: #000;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-family: "ITC Avant Garde Gothic W04", "AvantGardeGothicITCW01D 720%75", "AvantGardeGothicITCW01Dm", "Helvetica", sans-serif;
+    color: white;
+    font-size: 11px;
+    text-decoration: none;
+    line-height: 1;
+    transition: background .25s ease;
+    border: none;
+    top: 17px;
+    padding: 17px 0;
+    width: 180px;
+    text-align: center;
+    display: inline-block;
+    position: relative;
+    top: -18px;
+  }
+  .headerBar .headerBarButton a {
+    color: white;
+    text-decoration: none;
+  }
+  .headerBar .headerBarButton:hover {
+    border: none;
+    background: #6E1FFF;
+  }
+  .landingScreen {
+    height: 90vh;
+    top: 0%;
+    background: url("http://files.artsy.net/images/artsy_collector_web.jpg");
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    position: relative;
+  }
+  .landingScreenInner {
+    width: 600px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    position: absolute;
+  }
+  #landingCopy {
+    position: relative;
+    top: 0;
+    text-align: left;
+    font-family: "Adobe Garamond W08", "adobe-garamond-pro", "AGaramondPro-Regular", "Times New Roman", "Times", "serif";
+    font-size: 2em;
+    line-height: 1.4em;
+    color: white;
+    font-size: 50px;
+    line-height: 55px;
+  }
+  #landingSubCopy {
+    position: relative;
+    text-align: left;
+    font-family: "ITC Avant Garde Gothic W04", "AvantGardeGothicITCW01D 720%75", "AvantGardeGothicITCW01Dm", "Helvetica", sans-serif;
+    font-size: 0.75em;
+    letter-spacing: 1px;
+    line-height: 1.4em;
+    text-transform: uppercase;
+    color: white;
+    margin-top: 30px;
+    font-size: 18px;
+  }
+  #landingCTA {
+    background: #000;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-family: "ITC Avant Garde Gothic W04", "AvantGardeGothicITCW01D 720%75", "AvantGardeGothicITCW01Dm", "Helvetica", sans-serif;
+    padding: 17px 20px;
+    color: white;
+    font-size: 13px;
+    text-decoration: none;
+    transition: background .25s ease;
+    border: none;
+    text-align: center;
+    margin-top: 60px;
+    display: block;
+  }
+  #landingCTA:hover {
+    border: none;
+    background: #6E1FFF;
+  }
+  .section {
+    padding-top: 30px;
+    margin: 0 5% 60px 5%;
+  }
+  div#how.section {
+    background-color: #e5e5e5;
+    margin: 0 0 0 0;
+    padding: 60px 5% 60px 5%;
+  }
+  .howContainer {
+    margin: 60px 5% 0 20%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+  .howItem {
+    width: 30%;
+  }
+  .howHeader {
+    padding: 10px 0;
+  }
+  .howDescription {
+    font-size: 1em;
+    line-height: 1.4em;
+    color: black;
+    font-family: "Adobe Garamond W08", "adobe-garamond-pro", "AGaramondPro-Regular", "Times New Roman", "Times", "serif";
+  }
+  div#testimonials.section {
+    display: inline-block;
+  }
+  div#questions.section {
+    border-top: 1px solid #e5e5e5;
+  }
+  .questionsContainer {
+    margin: 30px 5% 0 20%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+  .questionsItem {
+    margin-bottom: 30px;
+    width: 45%;
+    max-width: 500px;
+  }
+  .questionText {
+    font-family: "Adobe Garamond W08", "adobe-garamond-pro", "AGaramondPro-Regular", "Times New Roman", "Times", "serif";
+    font-size: 26px;
+    line-height: 1.4em;
+    color: black;
+    padding-bottom: 10px;
+  }
+  .answerText {
+    font-family: "Adobe Garamond W08", "adobe-garamond-pro", "AGaramondPro-Regular", "Times New Roman", "Times", "serif";
+    font-size: 17px;
+    line-height: 1.4em;
+    color: black;
+  }
+  div#signup.section {
+    border-top: 1px solid #e5e5e5;
+  }
+  footer {
+    width: 100%;
+    height: 102px;
+    margin-top: 90px;
+    padding-left: 5%;
+    padding-right: 5%;
+    color: black;
+    background: white;
+  }
+  .footer-line {
+    padding-top: 30px;
+    border-top: 1px solid #e5e5e5;
+    background: none;
+  }
+  .footer-logo {
+    float: left;
+    display: -webkit-flex;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    color: black;
+    background: none;
+  }
+  .social {
+    float: right;
+    display: -webkit-flex;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    font-size: 20px;
+    background: none;
+  }
+  .copyright {
+    font-size: 16px;
+    padding-left: 14px;
+  }
+  .twosieLayout {
+    padding-left: 20%;
+  }
+  .twosieLayoutImg {
+    width: 500px;
+  }
+  .twosieLayoutText {
+    display: inline-block;
+    vertical-align: top;
+    width: calc(100% - 504px);
+    padding-left: 27px;
+  }
+  .twosieLayoutText h2 {
+    padding: 0;
+    font-size: 30px;
+    line-height: 42px;
+    max-width: 500px;
+  }
+  .twosieLayoutText i {
+    font-style: italic;
+    float: right;
+  }
+  i,
+  i:visited {
+    display: block;
+    margin: 0 5px;
+    color: black;
+  }
+  @media only screen and (max-width: 480px) {
+    .headerBar ul.headerBarNav li:not(:first-child) {
+      display: none;
+    }
+    .headerBar ul.headerBarNav li:icon {
+      float: right;
+      display: inline-block;
+    }
+  }
+</style>

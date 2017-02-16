@@ -1,0 +1,696 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1">
+    <meta property="og:description" content="Primer is a program from Artsy to help new collectors.">
+    <meta charset="utf-8">
+    <title>Artsy Primer</title>
+    <link rel="stylesheet" type="text/css" media="all" href="/css/mktLPSupportCompat.css">
+    <link href="https://www.artsy.net/images/favicon.ico" rel="icon" type="image/png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://fast.fonts.net/jsapi/f7f47a40-b25b-44ee-9f9c-cfdfc8bb2741.js"></script>
+    <script type="text/javascript" src="https://fast.fonts.net/jsapi/core/mt_otf.js"></script>
+    <style>
+  /* http://meyerweb.com/eric/tools/css/reset/
+                         v2.0 | 20110126
+                         License: none (public domain)
+                      */
+
+  html,
+  body,
+  div,
+  span,
+  applet,
+  object,
+  iframe,
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
+  p,
+  blockquote,
+  pre,
+  a,
+  abbr,
+  acronym,
+  address,
+  big,
+  cite,
+  code,
+  del,
+  dfn,
+  em,
+  img,
+  ins,
+  kbd,
+  q,
+  s,
+  samp,
+  small,
+  strike,
+  strong,
+  sub,
+  sup,
+  tt,
+  var,
+  b,
+  u,
+  i,
+  center,
+  dl,
+  dt,
+  dd,
+  ol,
+  ul,
+  li,
+  fieldset,
+  form,
+  label,
+  legend,
+  table,
+  caption,
+  tbody,
+  tfoot,
+  thead,
+  tr,
+  th,
+  td,
+  article,
+  aside,
+  canvas,
+  details,
+  embed,
+  figure,
+  figcaption,
+  footer,
+  header,
+  hgroup,
+  menu,
+  nav,
+  output,
+  ruby,
+  section,
+  summary,
+  time,
+  mark,
+  audio,
+  video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
+  }
+  /* HTML5 display-role reset for older browsers */
+
+  article,
+  aside,
+  details,
+  figcaption,
+  figure,
+  footer,
+  header,
+  hgroup,
+  menu,
+  nav,
+  section {
+    display: block;
+  }
+  body {
+    line-height: 1;
+  }
+  ol,
+  ul {
+    list-style: none;
+  }
+  blockquote,
+  q {
+    quotes: none;
+  }
+  blockquote:before,
+  blockquote:after,
+  q:before,
+  q:after {
+    content: '';
+    content: none;
+  }
+  table {
+    border-collapse: collapse;
+    border-spacing: 0;
+  }
+  div {
+    color: #000000;
+  }
+  h2 {
+    padding-left: 5%;
+    text-align: left;
+    font-family: "Adobe Garamond W08", "adobe-garamond-pro", "AGaramondPro-Regular", "Times New Roman", "Times", "serif";
+    font-size: 2em;
+    line-height: 1.4em;
+    color: black;
+  }
+  h3 {
+    text-align: left;
+    font-family: "Adobe Garamond W08", "adobe-garamond-pro", "AGaramondPro-Regular", "Times New Roman", "Times", "serif";
+    font-size: 1.5em;
+    line-height: 1.4em;
+    color: black;
+  }
+  h4 {
+    text-align: left;
+    font-family: "ITC Avant Garde Gothic W04", "AvantGardeGothicITCW01D 720%75", "AvantGardeGothicITCW01Dm", "Helvetica", sans-serif;
+    font-size: 0.75em;
+    letter-spacing: 1px;
+    line-height: 1.4em;
+    text-transform: uppercase;
+    color: black;
+  }
+  p {
+    text-align: left;
+    font-family: "Adobe Garamond W08", "adobe-garamond-pro", "AGaramondPro-Regular", "Times New Roman", "Times", "serif";
+    font-size: 1em;
+    line-height: 1.4em;
+    color: black;
+  }
+  * {
+    box-sizing: border-box;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+  ::selection {
+    background-color: #6e1fff;
+    color: white;
+  }
+  .headerBar {
+    position: fixed;
+    display: inline-block;
+    color: white;
+    text-align: left;
+    font-family: "ITC Avant Garde Gothic W04", "AvantGardeGothicITCW01D 720%75", "AvantGardeGothicITCW01Dm", "Helvetica", sans-serif;
+    font-size: 0.75em;
+    letter-spacing: 1px;
+    line-height: 1.4em;
+    text-transform: uppercase;
+    width: 100%;
+    z-index: 1;
+  }
+  .headerBarNavWrapper {
+    position: absolute;
+    right: 0;
+    top: 24px;
+    right: 55px;
+  }
+  .headerBarNavWrapper * {
+    font-size: 13px;
+  }
+  .headerBar #primerLogo {
+    display: inline-block;
+    padding: 20px 0 20px 55px;
+  }
+  .headerBar ul.headerBarNav {
+    display: inline-block;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+  }
+  .headerBar ul.headerBarNav li {
+    float: left;
+  }
+  .headerBar ul.headerBarNav li a {
+    display: inline-block;
+    color: white;
+    text-align: center;
+    margin: 14px 16px;
+    text-decoration: none;
+    position: relative;
+  }
+  .headerBar ul.headerBarNav li a:hover {
+    color: white;
+    position: relative;
+  }
+  .headerBar ul.headerBarNav li a::after {
+    content: '.';
+    position: absolute;
+    color: transparent;
+    width: 100%;
+    border-bottom: 2px solid white;
+    bottom: -5px;
+    left: 0;
+    opacity: 0;
+    z-index: 2;
+  }
+  .headerBar ul.headerBarNav li:hover a::after {
+    opacity: 1;
+  }
+  .headerBar ul.headerBarNav li.icon {
+    display: none;
+  }
+  .headerBar .headerBarButton {
+    background: #000;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-family: "ITC Avant Garde Gothic W04", "AvantGardeGothicITCW01D 720%75", "AvantGardeGothicITCW01Dm", "Helvetica", sans-serif;
+    color: white;
+    font-size: 11px;
+    text-decoration: none;
+    line-height: 1;
+    transition: background .25s ease;
+    border: none;
+    top: 17px;
+    padding: 17px 0;
+    width: 180px;
+    text-align: center;
+    display: inline-block;
+    position: relative;
+    top: -18px;
+  }
+  .headerBar .headerBarButton a {
+    color: white;
+    text-decoration: none;
+  }
+  .headerBar .headerBarButton:hover {
+    border: none;
+    background: #6E1FFF;
+  }
+  .landingScreen {
+    height: 90vh;
+    top: 0%;
+    background: url("http://files.artsy.net/images/artsy_collector_web.jpg");
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    position: relative;
+  }
+  .landingScreenInner {
+    width: 600px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    position: absolute;
+  }
+  #landingCopy {
+    position: relative;
+    top: 0;
+    text-align: left;
+    font-family: "Adobe Garamond W08", "adobe-garamond-pro", "AGaramondPro-Regular", "Times New Roman", "Times", "serif";
+    font-size: 2em;
+    line-height: 1.4em;
+    color: white;
+    font-size: 50px;
+    line-height: 55px;
+  }
+  #landingSubCopy {
+    position: relative;
+    text-align: left;
+    font-family: "ITC Avant Garde Gothic W04", "AvantGardeGothicITCW01D 720%75", "AvantGardeGothicITCW01Dm", "Helvetica", sans-serif;
+    font-size: 0.75em;
+    letter-spacing: 1px;
+    line-height: 1.4em;
+    text-transform: uppercase;
+    color: white;
+    margin-top: 30px;
+    font-size: 18px;
+  }
+  #landingCTA {
+    background: #000;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-family: "ITC Avant Garde Gothic W04", "AvantGardeGothicITCW01D 720%75", "AvantGardeGothicITCW01Dm", "Helvetica", sans-serif;
+    padding: 17px 20px;
+    color: white;
+    font-size: 13px;
+    text-decoration: none;
+    transition: background .25s ease;
+    border: none;
+    text-align: center;
+    margin-top: 60px;
+    display: block;
+  }
+  #landingCTA:hover {
+    border: none;
+    background: #6E1FFF;
+  }
+  .section {
+    padding-top: 30px;
+    margin: 0 5% 60px 5%;
+  }
+  div#how.section {
+    background-color: #e5e5e5;
+    margin: 0 0 0 0;
+    padding: 60px 5% 60px 5%;
+  }
+  .howContainer {
+    margin: 60px 5% 0 20%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+  .howItem {
+    width: 30%;
+  }
+  .howHeader {
+    padding: 10px 0;
+  }
+  .howDescription {
+    font-size: 1em;
+    line-height: 1.4em;
+    color: black;
+  }
+  div#testimonials.section {
+    display: inline-block;
+  }
+  div#questions.section {
+    border-top: 1px solid #e5e5e5;
+  }
+  .questionsContainer {
+    margin: 30px 5% 0 20%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+  .questionsItem {
+    margin-bottom: 30px;
+    width: 45%;
+    max-width: 500px;
+  }
+  .questionText {
+    font-family: "Adobe Garamond W08", "adobe-garamond-pro", "AGaramondPro-Regular", "Times New Roman", "Times", "serif";
+    font-size: 26px;
+    line-height: 1.4em;
+    color: black;
+    padding-bottom: 10px;
+  }
+  .answerText {
+    font-family: "Adobe Garamond W08", "adobe-garamond-pro", "AGaramondPro-Regular", "Times New Roman", "Times", "serif";
+    font-size: 17px;
+    line-height: 1.4em;
+    color: black;
+  }
+  div#signup.section {
+    border-top: 1px solid #e5e5e5;
+  }
+  footer {
+    width: 100%;
+    height: 102px;
+    margin-top: 90px;
+    padding-left: 5%;
+    padding-right: 5%;
+    color: black;
+    background: white;
+  }
+  .footer-line {
+    padding-top: 30px;
+    border-top: 1px solid #e5e5e5;
+    background: none;
+  }
+  .footer-logo {
+    float: left;
+    display: -webkit-flex;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    color: black;
+    background: none;
+  }
+  .social {
+    float: right;
+    display: -webkit-flex;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    font-size: 20px;
+    background: none;
+  }
+  .copyright {
+    font-size: 16px;
+    padding-left: 14px;
+  }
+  .twosieLayout {
+    padding-left: 20%;
+  }
+  .twosieLayoutImg {
+    width: 500px;
+  }
+  .twosieLayoutText {
+    display: inline-block;
+    vertical-align: top;
+    width: calc(100% - 504px);
+    padding-left: 27px;
+  }
+  .twosieLayoutText h2 {
+    padding: 0;
+    font-size: 30px;
+    line-height: 42px;
+    max-width: 500px;
+  }
+  .twosieLayoutText i {
+    font-style: italic;
+    float: right;
+  }
+  i,
+  i:visited {
+    display: block;
+    margin: 0 5px;
+    color: black;
+  }
+  @media only screen and (max-width: 480px) {
+    .headerBar ul.headerBarNav li:not(:first-child) {
+      display: none;
+    }
+    .headerBar ul.headerBarNav li:icon {
+      float: right;
+      display: inline-block;
+    }
+  }
+</style>
+  </head>
+  <body>
+    <!--     Header Bar section -->
+<div class="headerBar">
+  <div id="primerLogo">
+    <img src="http://files.artsy.net/images/artsy_primer_logo_white.svg" style="height:50px;">
+  </div>
+  <div class="headerBarNavWrapper">
+    <ul class="headerBarNav" id="topNav">
+      <li><a href="#why">Why Primer?</a>
+      </li>
+      <li><a href="#how">How it Works</a>
+      </li>
+      <li><a href="#testimonials">Testimonials</i></a>
+      </li>
+      <li><a href="#questions">Questions</a>
+      </li>
+      <li><a href="https://www.artsy.net/about">About Artsy</a>
+      </li>
+      <li class="icon">
+        <a href="javascript:void(0);" onclick="myFunction()">☰</a>
+      </li>
+    </ul>
+    <div class="headerBarButton">
+      <a href="#signup">Sign Up</a>
+    </div>
+  </div>
+</div>
+
+    <!--     Main Screen section -->
+<div class="landingScreen">
+  <div class="landingScreenInner">
+    <div id="landingCopy">
+      Buy artwork with expert guidance from a dedicated Artsy Specialist.
+    </div>
+    <div id="landingSubCopy">
+      A six week program starting March 6th
+    </div>
+    <a href='#signup' id="landingCTA">
+      Sign Up
+    </a>
+  </div>
+</div>
+    <!--     Why Primer section -->
+<div class="section" id="why">
+  <h2>Why Primer?</h2>
+  <div class="twosieLayout">
+    <img class="twosieLayoutImg" src="http://files.artsy.net/images/primer_specialists.jpg" />
+    <div class="twosieLayoutText">
+      <h3>Collecting art is a pleasure<br>Buying the right piece is confusing</h3>
+      <p>Primer helps you become an informed art collector quickly and on your schedule. Primer pairs you with a dedicated Artsy Specialist for six-weeks of guided support through your first art acquisition. All for $550.</p>
+    </div>
+  </div>
+</div>
+    <!--     How It Works section -->
+<div class="section" id="how">
+  <h2>How it works</h2>
+
+  <ul class="howContainer">
+    <li class="howItem">
+      <div class="howIcons" id="discoverIcon">
+        <img src="http://files.artsy.net/images/discoverIcon.svg" style="height:90px">
+      </div>
+
+      <div class="howHeader" id="discover">
+        <h4>Discover</h4>
+      </div>
+
+      <div class="howDescription" id="discoverDescription">
+        Regardless of your art experience, proprietary Art Genome data and dedicated Artsy Specialist will guide you to art that resonate with you.
+      </div>
+    </li>
+
+    <li class="howItem">
+      <div class="howIcons" id="connectIcon">
+        <img src="http://files.artsy.net/images/connectIcon.svg" style="height:90px">
+      </div>
+
+      <div class="howHeader" id="connect">
+        <h4>Connect</h4>
+      </div>
+
+      <div class="howDescription" id="connectDescription">
+        Get an insider playbook to buying at galleries, fairs and auctions paired with access to experienced Artsy Specialists.
+      </div>
+    </li>
+
+    <li class="howItem">
+      <div class="howIcons" id="participateIcon">
+        <img src="http://files.artsy.net/images/participateIcon.svg" style="height:90px">
+      </div>
+
+      <div class="howHeader" id="participate">
+        <h4>Participate</h4>
+      </div>
+
+      <div class="howDescription" id="participateDescription">
+        Get alerted to nearby shows and events that have work most relevant to your taste. Enjoy VIP access to select events.
+      </div>
+    </li>
+  </ul>
+</div>
+    <!--     User Testimonials section -->
+<div class="section" id="testimonials">
+  <div class="twosieLayout">
+    <img
+      class="twosieLayoutImg"
+      src="http://files.artsy.net/images/artsy_collector_2_forweb.jpg"
+    >
+    <div class="twosieLayoutText">
+      <h2>
+        Artsy helped me out big time. My walls used to be sad and now they're glad.
+        <br>
+        <br>
+        <i>- Sammy, Artsy Collector</i>
+      </h2>
+    </div>
+  </div>
+</div>
+    <!--     FAQ section -->
+<div class="section" id="questions">
+  <h2>Questions</h2>
+
+  <ul class="questionsContainer">
+
+    <li class="questionsItem">
+      <div class="questionText" id="first">
+        How do I do this?
+      </div>
+
+      <div class="answerText" id="first">
+        It's easy, just talk to your speclialist, ask for their advice, tell them what you need, fill space with text.
+      </div>
+    </li>
+
+    <li class="questionsItem">
+      <div class="questionText" id="second">
+        How do I do this?
+      </div>
+
+      <div class="answerText" id="second">
+        It's easy, just talk to your speclialist, ask for their advice, tell them what you need, fill space with text.
+      </div>
+    </li>
+
+    <li class="questionsItem">
+      <div class="questionText" id="third">
+        How do I do this?
+      </div>
+
+      <div class="answerText" id="third">
+        It's easy, just talk to your speclialist, ask for their advice, tell them what you need, fill space with text.
+      </div>
+    </li>
+
+    <li class="questionsItem">
+      <div class="questionText" id="fourth">
+        How do I do this?
+      </div>
+
+      <div class="answerText" id="fourth">
+        It's easy, just talk to your speclialist, ask for their advice, tell them what you need, fill space with text.
+      </div>
+    </li>
+
+  </ul>
+
+</div>
+    <!--     Sign Up section -->
+<div class="section" id="signup">
+  <h2>Sign Up</h2>
+  <!--     FORM CODE GOES HERE -->
+  <!--     FORM STYLING HAPPENS IN MARKETO: FORM > FORM SETTINGS > GEAR ICON > EDIT CUSTOM CSS -->
+</div>
+
+
+    <div class="mktoContent"></div>
+    <footer>
+
+  <div class="footer-line">
+  </div>
+
+  <div class="footer-logo">
+    <div><img src="http://files.artsy.net/images/artsy-logo-square-black.svg" style="height:20px">
+    </div>
+    <div class="copyright">© 2017 Artsy</div>
+  </div>
+
+  <div class="social">
+    <div><a href="https://twitter.com/artsy"><i class="fa fa-twitter" aria-hidden="true"></i></a>
+    </div>
+    <div><a href="https://www.facebook.com/artsy"><i class="fa fa-facebook" aria-hidden="true"></i></a>
+    </div>
+    <div><a href="https://www.snapchat.com/add/artsy.net"><i class="fa fa-snapchat-ghost" aria-hidden="true"></i></a>
+    </div>
+    <div><a href="https://www.instagram.com/artsy/"><i class="fa fa-instagram" aria-hidden="true"></i></a>
+    </div>
+  </div>
+
+</footer>
+
+    <!--     THIS SCRIPT HANDLES THE RESPONSIVE BURGER MENU IN HEADER NAV -->
+    <script>
+      function myFunction() {
+        var x = document.getElementById("myTopnav");
+        if (x.className === "topnav") {
+          x.className += " responsive";
+        } else {
+          x.className = "topnav";
+        }
+      }
+    </script>
+
+    <!--     THIS SCRIPT INSERTS THE MARKETO FORM INTO THE PAGE -->
+    <script>
+      var form = $('.lpeCElement');
+      if (form) {
+        $('#signup').append(form);
+      }
+    </script>
+  </body>
+</html>
